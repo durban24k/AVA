@@ -8,7 +8,8 @@ def record_audio(ask=False):
      with sr.Microphone() as source:
           if ask:
                print(ask)
-          audio=r.listen(source)
+               audio=r.listen(source)
+               voice_data=''
           try:
                voice_data=r.recognize_google(audio)
           except sr.UnknownValueError:
