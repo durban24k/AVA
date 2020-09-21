@@ -8,8 +8,8 @@ def record_audio(ask=False):
      with sr.Microphone() as source:
           if ask:
                print(ask)
-               audio=r.listen(source)
-               voice_data=''
+          audio=r.listen(source)
+          voice_data=''
           try:
                voice_data=r.recognize_google(audio)
           except sr.UnknownValueError:
@@ -25,7 +25,7 @@ def respond(data):
           print(ctime())
      if 'search' in voice_data:
           search=record_audio('what do you want to search for')
-          url='https://www.google.com?q='+search
+          url='https://google.com/search?q=' + search
           webbrowser.get().open(url)
           print('Here is what I found for '+ search)
 
